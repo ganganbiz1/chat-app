@@ -15,8 +15,8 @@ COPY . .
 # Expose port
 EXPOSE 3001
 
-# Start development server with Turbopack
-CMD ["npm", "run", "dev", "--", "--turbo"]
+# Start development server with Turbopack on port 3001
+CMD ["npm", "run", "dev"]
 
 # Production builder stage
 FROM node:20-alpine AS builder
