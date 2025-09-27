@@ -18,7 +18,13 @@ chat-app/
 │   ├── migrations/           # データベースマイグレーション
 │   ├── Dockerfile
 │   └── go.mod
-├── frontend/                  # フロントエンド（今後実装予定）
+├── frontend/                  # Next.js フロントエンド
+│   ├── src/
+│   │   ├── app/              # App Router
+│   │   ├── components/       # Reactコンポーネント
+│   │   └── lib/             # ユーティリティ
+│   ├── Dockerfile
+│   └── package.json
 ├── docker-compose.yml         # 全体のDocker構成
 └── README.md
 ```
@@ -32,12 +38,24 @@ chat-app/
 
 ## 🚀 技術スタック
 
+### Backend
 - **Language**: Go 1.22
 - **Framework**: Echo v4
 - **Database**: MySQL 8.0
 - **Cache**: Redis 7
 - **ORM**: GORM
+- **Hot Reload**: Air
+
+### Frontend
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Hot Reload**: Turbopack
+
+### Infrastructure
 - **Containerization**: Docker + Docker Compose
+- **Development**: Multi-stage Dockerfiles
 
 ## 📋 API エンドポイント
 
@@ -88,6 +106,7 @@ docker compose up --build -d
 
 ### サービス構成
 
+- **フロントエンド**: `http://localhost:3001`
 - **API サーバー**: `http://localhost:8080`
 - **MySQL**: `localhost:3306`
 - **Redis**: `localhost:6379`
