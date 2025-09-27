@@ -13,9 +13,9 @@ RUN npm ci
 COPY . .
 
 # Expose port
-EXPOSE 3001
+EXPOSE 3000
 
-# Start development server with Turbopack on port 3001
+# Start development server with Turbopack on port 3000
 CMD ["npm", "run", "dev"]
 
 # Production builder stage
@@ -60,7 +60,7 @@ COPY --from=builder /app/public ./public
 USER nextjs
 
 # Expose port
-EXPOSE 3001
+EXPOSE 3000
 
 # Start production server
 CMD ["npm", "start"]
